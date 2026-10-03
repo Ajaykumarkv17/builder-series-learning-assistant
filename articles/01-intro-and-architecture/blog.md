@@ -10,6 +10,8 @@ This first part is the one with no glamour and all the leverage: the architectur
 
 **Who this is for:** developers comfortable with Python and the AWS CLI who want to build real agents on Bedrock, not toy demos. You'll want an AWS account with Bedrock access and Python 3.12+.
 
+**All the code for this series lives in one GitHub repo:** [Ajaykumarkv17/builder-series-learning-assistant](https://github.com/Ajaykumarkv17/builder-series-learning-assistant). Clone it once and it grows with every part.
+
 ---
 
 ## What we're building
@@ -83,7 +85,7 @@ Two things worth calling out in that diagram:
 Everything above is just talk until there's code to hang it on. Part 1 ships a small Python package, `learning_assistant`, that later parts import and extend. It lives once at the repo root and **grows one module per part** — this series builds a single evolving app, not 18 disconnected snippets:
 
 ```
-AWS_Bedrock_series/                   # repo root — clone + install once
+builder-series-learning-assistant/    # repo root — clone + install once
 ├── README.md                         # series roadmap (start here)
 ├── RESEARCH.md                       # feature reference
 ├── LICENSE
@@ -189,8 +191,8 @@ That snippet, by the way, is also your first taste of the Converse API — the `
 
 ```bash
 # 1. Clone the repo and enter it
-git clone <your-repo-url> AWS_Bedrock_series
-cd AWS_Bedrock_series
+git clone https://github.com/Ajaykumarkv17/builder-series-learning-assistant.git
+cd builder-series-learning-assistant
 
 # 2. Create a virtualenv and install (Python 3.12+)
 python -m venv .venv
