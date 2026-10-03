@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" modified="2026-10-03T13:16:00.000Z" agent="Kiro" version="24.0.0">
+  <diagram id="doctor-sequence" name="Doctor Sequence">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="440" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" value="Preflight doctor — ordered verification (fail fast, say what to fix)" style="text;html=1;align=center;fontSize=16;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="14" width="820" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1 · STS&#10;GetCallerIdentity&#10;(creds resolve?)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDF3;strokeColor=#232F3E;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2 · Region set?&#10;AWS_REGION&#10;(us-east-1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDF3;strokeColor=#232F3E;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="250" y="120" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3 · Bedrock&#10;list_foundation_models&#10;(Nova ids present?)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E4F5;strokeColor=#1A4F8B;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="460" y="120" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="4 · Converse smoke&#10;Nova Lite replies&#10;(end-to-end invoke)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEFE0;strokeColor=#1D8102;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="680" y="120" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="html=1;endArrow=block;strokeColor=#232F3E;" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="html=1;endArrow=block;strokeColor=#232F3E;" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="html=1;endArrow=block;strokeColor=#232F3E;" edge="1" parent="1" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ok" value="exit 0 — ready for Article 2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEFE0;strokeColor=#1D8102;fontColor=#1D8102;" vertex="1" parent="1">
+          <mxGeometry x="680" y="270" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="html=1;endArrow=block;strokeColor=#1D8102;" edge="1" parent="1" source="s4" target="ok">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fail" value="any check fails → exit 1 with a specific remedy&#10;(enable model access · set region · use us.* profile · fix IAM)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE4E4;strokeColor=#C0392B;fontColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="270" width="600" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="WARN/FAIL" style="html=1;endArrow=block;strokeColor=#C0392B;fontColor=#C0392B;dashed=1;" edge="1" parent="1" source="s3" target="fail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

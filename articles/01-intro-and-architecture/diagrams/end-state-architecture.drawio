@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" modified="2026-10-03T13:16:00.000Z" agent="Kiro" version="24.0.0">
+  <diagram id="request-flow" name="Request Flow">
+    <mxGraphModel dx="1100" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="620" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" value="End-state architecture — Learning Assistant on Bedrock AgentCore" style="text;html=1;align=center;fontSize=16;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="14" width="820" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="learner" value="Learner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDF3;strokeColor=#232F3E;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="60" y="280" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="runtime" value="AgentCore Runtime&#10;(serverless, session-isolated, up to 8h)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3D6;strokeColor=#B8860B;fontColor=#232F3E;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="230" y="120" width="440" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="agent" value="Agent (Strands)&#10;Converse API · Nova Pro + Lite&#10;Prompt Mgmt · Prompt Caching" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEFE0;strokeColor=#1D8102;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="270" y="170" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kb" value="Knowledge Bases&#10;(RAG) + Guardrails" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E4F5;strokeColor=#1A4F8B;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="270" y="300" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gw" value="AgentCore Gateway&#10;(tools / MCP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E4F5;strokeColor=#1A4F8B;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="440" y="300" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mem" value="AgentCore Memory&#10;(short + long term)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E4F5;strokeColor=#1A4F8B;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="470" y="170" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gov" value="Identity · Policy (Cedar) · Observability (OTEL) · Evaluations · Code Interpreter · Browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFEFEF;strokeColor=#687078;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="230" y="450" width="440" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ea" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#232F3E;fontColor=#232F3E;" edge="1" parent="1" source="learner" target="runtime">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb" style="html=1;endArrow=block;strokeColor=#1D8102;" edge="1" parent="1" source="agent" target="kb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec" style="html=1;endArrow=block;strokeColor=#1D8102;" edge="1" parent="1" source="agent" target="gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed" style="html=1;endArrow=block;strokeColor=#1D8102;" edge="1" parent="1" source="agent" target="mem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="We grow this diagram one box per article (18 total)." style="text;html=1;align=center;fontSize=11;fontStyle=2;fontColor=#687078;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="820" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

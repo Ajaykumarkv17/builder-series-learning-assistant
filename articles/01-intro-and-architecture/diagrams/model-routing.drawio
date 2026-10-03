@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" modified="2026-10-03T13:16:00.000Z" agent="Kiro" version="24.0.0">
+  <diagram id="model-routing" name="Model Routing">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="560" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Learning Assistant — Amazon Nova model routing (Converse API)" style="text;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="16" width="820" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="learner" value="Learner&#10;request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDF3;strokeColor=#232F3E;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="router" value="model_id_for(task)&#10;router (config.py)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D6;strokeColor=#B8860B;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="220" y="225" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#232F3E;" edge="1" parent="1" source="learner" target="router">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lite" value="Nova Lite  (FAST — default)&#10;amazon.nova-lite-v1:0&#10;us.amazon.nova-lite-v1:0&#10;routing · short answers · agent turns" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEFE0;strokeColor=#1D8102;fontColor=#232F3E;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="470" y="120" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pro" value="Nova Pro  (REASONING)&#10;amazon.nova-pro-v1:0&#10;us.amazon.nova-pro-v1:0&#10;tutoring · grading · multi-tool orchestration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E4F5;strokeColor=#1A4F8B;fontColor=#232F3E;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="470" y="230" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="micro" value="Nova Micro  (CHEAP — optional)&#10;amazon.nova-micro-v1:0&#10;us.amazon.nova-micro-v1:0&#10;ultra-cheap text classification" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E6F5;strokeColor=#7A2E8A;fontColor=#232F3E;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="470" y="340" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="Task.FAST" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1D8102;fontColor=#1D8102;" edge="1" parent="1" source="router" target="lite">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Task.REASONING" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1A4F8B;fontColor=#1A4F8B;" edge="1" parent="1" source="router" target="pro">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Task.CHEAP" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7A2E8A;fontColor=#7A2E8A;" edge="1" parent="1" source="router" target="micro">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="profile" value="US cross-Region inference profile → Amazon Bedrock (us-east-1)" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#879196;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="470" y="450" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="html=1;endArrow=block;strokeColor=#879196;dashed=1;" edge="1" parent="1" source="lite" target="profile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="html=1;endArrow=block;strokeColor=#879196;dashed=1;" edge="1" parent="1" source="pro" target="profile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="html=1;endArrow=block;strokeColor=#879196;dashed=1;" edge="1" parent="1" source="micro" target="profile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="No Anthropic / Claude models anywhere — guard-tested in config." style="text;html=1;align=center;fontSize=11;fontStyle=2;fontColor=#687078;" vertex="1" parent="1">
+          <mxGeometry x="40" y="500" width="820" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

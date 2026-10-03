@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <!-- BRIEF: doctor ordered checks: STS -> region -> list_foundation_models -> Converse smoke -> exit0; fail branch with remedies. -->
+  <rect width="900" height="360" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#232F3E">Preflight doctor — ordered verification (fail fast, say what to fix)</text>
+
+  <!-- step 1 -->
+  <rect x="30" y="90" width="180" height="90" rx="8" fill="#E8EDF3" stroke="#232F3E"/>
+  <text x="120" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#232F3E">1 · STS identity</text>
+  <text x="120" y="138" text-anchor="middle" font-size="11" fill="#232F3E">GetCallerIdentity</text>
+  <text x="120" y="156" text-anchor="middle" font-size="11" fill="#687078">creds resolve?</text>
+
+  <!-- step 2 -->
+  <rect x="245" y="90" width="180" height="90" rx="8" fill="#E8EDF3" stroke="#232F3E"/>
+  <text x="335" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#232F3E">2 · Region set?</text>
+  <text x="335" y="138" text-anchor="middle" font-size="11" fill="#232F3E">AWS_REGION</text>
+  <text x="335" y="156" text-anchor="middle" font-size="11" fill="#687078">us-east-1</text>
+
+  <!-- step 3 -->
+  <rect x="460" y="90" width="190" height="90" rx="8" fill="#D6E4F5" stroke="#1A4F8B"/>
+  <text x="555" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#1A4F8B">3 · Bedrock models</text>
+  <text x="555" y="138" text-anchor="middle" font-size="10" fill="#232F3E">list_foundation_models</text>
+  <text x="555" y="156" text-anchor="middle" font-size="11" fill="#687078">Nova ids present?</text>
+
+  <!-- step 4 -->
+  <rect x="685" y="90" width="185" height="90" rx="8" fill="#DDEFE0" stroke="#1D8102"/>
+  <text x="777" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#1D8102">4 · Converse smoke</text>
+  <text x="777" y="138" text-anchor="middle" font-size="11" fill="#232F3E">Nova Lite replies</text>
+  <text x="777" y="156" text-anchor="middle" font-size="11" fill="#687078">end-to-end invoke</text>
+
+  <!-- arrows between steps -->
+  <line x1="210" y1="135" x2="245" y2="135" stroke="#232F3E" stroke-width="1.5"/><polygon points="245,135 237,131 237,139" fill="#232F3E"/>
+  <line x1="425" y1="135" x2="460" y2="135" stroke="#232F3E" stroke-width="1.5"/><polygon points="460,135 452,131 452,139" fill="#232F3E"/>
+  <line x1="650" y1="135" x2="685" y2="135" stroke="#232F3E" stroke-width="1.5"/><polygon points="685,135 677,131 677,139" fill="#232F3E"/>
+
+  <!-- exit 0 -->
+  <rect x="685" y="240" width="185" height="40" rx="8" fill="#DDEFE0" stroke="#1D8102"/>
+  <text x="777" y="265" text-anchor="middle" font-size="12" font-weight="600" fill="#1D8102">exit 0 — ready for Article 2</text>
+  <line x1="777" y1="180" x2="777" y2="240" stroke="#1D8102" stroke-width="1.5"/><polygon points="777,240 773,232 781,232" fill="#1D8102"/>
+
+  <!-- fail branch -->
+  <rect x="30" y="240" width="620" height="52" rx="8" fill="#FBE4E4" stroke="#C0392B"/>
+  <text x="340" y="262" text-anchor="middle" font-size="12" font-weight="600" fill="#C0392B">any check fails → exit 1 with a specific remedy</text>
+  <text x="340" y="280" text-anchor="middle" font-size="11" fill="#C0392B">enable model access · set region · use us.* profile · fix IAM</text>
+  <line x1="555" y1="180" x2="430" y2="240" stroke="#C0392B" stroke-width="1.3" stroke-dasharray="4 3"/><polygon points="430,240 439,239 435,232" fill="#C0392B"/>
+</svg>

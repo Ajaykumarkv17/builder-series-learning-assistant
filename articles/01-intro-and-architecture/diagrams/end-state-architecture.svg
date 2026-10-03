@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <!-- BRIEF: end-state architecture. learner->AgentCore Runtime containing Agent(Nova)+Memory, over KB+Guardrails & Gateway, with governance band. -->
+  <rect width="900" height="560" fill="#ffffff"/>
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#232F3E">End-state architecture — Learning Assistant on Bedrock AgentCore</text>
+
+  <!-- learner -->
+  <rect x="60" y="275" width="100" height="50" rx="8" fill="#E8EDF3" stroke="#232F3E"/>
+  <text x="110" y="305" text-anchor="middle" font-size="13" fill="#232F3E">Learner</text>
+
+  <!-- runtime container -->
+  <rect x="230" y="110" width="440" height="320" rx="10" fill="#FFF8E6" stroke="#B8860B"/>
+  <text x="450" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#B8860B">AgentCore Runtime</text>
+  <text x="450" y="150" text-anchor="middle" font-size="11" fill="#687078">serverless · session-isolated · up to 8h</text>
+
+  <!-- agent -->
+  <rect x="265" y="166" width="370" height="84" rx="8" fill="#DDEFE0" stroke="#1D8102"/>
+  <text x="450" y="190" text-anchor="middle" font-size="13" font-weight="700" fill="#1D8102">Agent (Strands)</text>
+  <text x="450" y="210" text-anchor="middle" font-size="11" fill="#232F3E">Converse API · Nova Pro + Nova Lite</text>
+  <text x="450" y="228" text-anchor="middle" font-size="11" fill="#232F3E">Prompt Management · Prompt Caching</text>
+
+  <!-- memory -->
+  <rect x="470" y="268" width="160" height="56" rx="8" fill="#D6E4F5" stroke="#1A4F8B"/>
+  <text x="550" y="290" text-anchor="middle" font-size="12" font-weight="600" fill="#1A4F8B">AgentCore Memory</text>
+  <text x="550" y="308" text-anchor="middle" font-size="11" fill="#232F3E">short + long term</text>
+
+  <!-- kb -->
+  <rect x="265" y="268" width="170" height="56" rx="8" fill="#D6E4F5" stroke="#1A4F8B"/>
+  <text x="350" y="290" text-anchor="middle" font-size="12" font-weight="600" fill="#1A4F8B">Knowledge Bases</text>
+  <text x="350" y="308" text-anchor="middle" font-size="11" fill="#232F3E">RAG + Guardrails</text>
+
+  <!-- gateway -->
+  <rect x="265" y="344" width="370" height="40" rx="8" fill="#D6E4F5" stroke="#1A4F8B"/>
+  <text x="450" y="369" text-anchor="middle" font-size="12" fill="#1A4F8B">AgentCore Gateway  (tools / MCP)</text>
+
+  <!-- governance -->
+  <rect x="230" y="448" width="440" height="46" rx="8" fill="#EFEFEF" stroke="#687078"/>
+  <text x="450" y="476" text-anchor="middle" font-size="11" fill="#232F3E">Identity · Policy (Cedar) · Observability (OTEL) · Evaluations · Code Interpreter · Browser</text>
+
+  <!-- edges -->
+  <line x1="160" y1="300" x2="230" y2="300" stroke="#232F3E" stroke-width="1.5"/>
+  <polygon points="230,300 222,296 222,304" fill="#232F3E"/>
+  <text x="178" y="293" font-size="10" fill="#232F3E">HTTPS</text>
+  <line x1="350" y1="250" x2="350" y2="268" stroke="#1D8102" stroke-width="1.5"/>
+  <polygon points="350,268 346,260 354,260" fill="#1D8102"/>
+  <line x1="550" y1="250" x2="550" y2="268" stroke="#1D8102" stroke-width="1.5"/>
+  <polygon points="550,268 546,260 554,260" fill="#1D8102"/>
+  <line x1="450" y1="324" x2="450" y2="344" stroke="#1D8102" stroke-width="1.5"/>
+  <polygon points="450,344 446,336 454,336" fill="#1D8102"/>
+
+  <text x="450" y="524" text-anchor="middle" font-size="11" font-style="italic" fill="#687078">We grow this diagram one box per article (18 total).</text>
+</svg>

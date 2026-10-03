@@ -1,0 +1,30 @@
+[project]
+name = "learning-assistant"
+version = "0.1.0"
+description = "Learning Assistant on Amazon Bedrock — one evolving app across the article series (Amazon Nova family only)"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.35.0",
+    "botocore>=1.35.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+la-doctor = "learning_assistant.doctor:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["learning_assistant*"]
